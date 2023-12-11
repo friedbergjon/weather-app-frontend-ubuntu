@@ -19,6 +19,7 @@ h1{
   font-size: 6rem;
 }
 .cityName{
+  text-align: center;
   font-size: 2.8rem;
   text-shadow: 0px 1px 4px #23430C;
 
@@ -44,6 +45,7 @@ input::placeholder{
   border: 2px solid white;
   padding:10px;
 }
+
 .app{
   background: url('./assets/bg.jpeg') no-repeat center center/cover;
   width:100%;
@@ -53,6 +55,12 @@ input::placeholder{
   position:fixed;
   overflow-y: auto;
   color: #fff;
+  animation: blur-text 1.5s infinite linear alternate;
+}
+
+@keyframes blur-text {
+0% {filter: blur(0px);}
+100% {filter: blur(1px);}
 }
 
 .app:before {
@@ -66,7 +74,11 @@ input::placeholder{
   z-index: -1;
 }
 
-.app .search{
+.search{
+  text-align: center;
+  padding-top: 3rem;
+}
+.app {
   text-align: center;
   padding: 1rem;
 }
@@ -101,6 +113,7 @@ input::placeholder{
 
 .descriptionWeather{
   text-shadow: 0px 1px 4px #23430C;
+  font-size: 40px;
 }
 .app .description{
   position: relative;
@@ -127,16 +140,27 @@ input::placeholder{
   text-shadow: 0px 1px 4px #23430C;
 }
 .temp{
+  text-align: center;
   text-shadow: 0px 1px 4px #23430C;
 }
 .app .logo{
   margin: 0 auto;
+  text-align: center;
   align-items: center;
   max-width:150px;
   min-height:150px;
-  opacity: 40%;
+  opacity: 70%;
   border-radius: 25%;
  
+}
+
+.location-name {
+  text-align: center;
+  font-size: 40px;
+}
+.logo-image{
+  text-align: center;
+  margin-top: -50px;
 }
 p .weatherTitles{
   text-shadow: 0px 1px 4px #23430C;
