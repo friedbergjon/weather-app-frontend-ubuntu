@@ -26,7 +26,7 @@ function App() {
           value={zipcode}
           onChange={event => setZipcode(event.target.value)}
           onKeyPress={searchZipcode}
-          placeholder='Enter Location'
+          placeholder='Type City/Zip and Enter'
           type="text" />
       </div>
       <div className="container">
