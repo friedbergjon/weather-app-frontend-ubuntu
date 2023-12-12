@@ -4,31 +4,36 @@ import "./App.css";
 
 
 function App() {
+
+  
   const [data, setData] = useState({})
   const [zipcode, setZipcode] = useState('')
 
   const url = `https://api.weatherstack.com/current?access_key=${process.env.REACT_APP_api_key}&query=${zipcode}`
 
   const searchZipcode = (event) => {
-    if (event.key === 'Enter') {
-      axios.get(url).then((response) => {
+    event.preventDefault()
+  
+
+      axios.get(url)
+      .then((response) => {
         setData(response.data)
         console.log(response.data)
       })
       setZipcode('')
-    }
+    
   }
+
 
   return (
     <div className="app">
       <div className="search">
         <input
-          value={zipcode}
           onChange={event => setZipcode(event.target.value)}
-          onKeyPress={searchZipcode}
-          placeholder='Type City/Zip and Enter'
+          placeholder='Type City/Zip'
           type="text" />
       </div>
+      <button className="getWeather" onClick={(event) => searchZipcode(event)} type='button'>Click for Weather</button>
       <div className="container">
         <div className="top">
           <div className="location">
